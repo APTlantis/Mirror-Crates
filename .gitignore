@@ -1,0 +1,51 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.orig
+.idea/
+.vscode/
+
+# Go build artifacts
+bin/
+dist/
+build/
+*.exe
+*.exe~
+*.test
+*.out
+
+# Local tools and caches
+.tools/
+.cache/
+**/.cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs and manifests produced by runs
+*.log
+*.log.*
+manifest.jsonl
+bundles/
+
+# Test/output data
+out/
+tmp/
+temp/
+*.tmp
+
+# Archives
+*.tar
+*.tar.*
+*.zip
+*.gz
+*.zst
+
+# OS-specific
+ehthumbs.db
+Desktop.ini
+
