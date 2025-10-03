@@ -8,30 +8,30 @@ This guide gets you mirroring crates.io quickly on Windows using PowerShell.
 - Git
 
 ### Set up directories
-```
+```powershell
 $root = "$env:USERPROFILE\Rust-Crates"
 New-Item -Force -ItemType Directory $root, "$root\crates.io-index", "$root\mirror" | Out-Null
 ```
 
 ### Clone crates.io-index (first time)
-```
+```powershell
 git clone https://github.com/rust-lang/crates.io-index "$root\crates.io-index"
 ```
 
 For subsequent runs, update instead of re-clone:
-```
+```powershell
 git -C "$root\crates.io-index" fetch --prune --all
 git -C "$root\crates.io-index" reset --hard origin/master
 ```
 
 ### Build CLIs
-```
+```powershell
 go build -o .\bin\download-crates.exe .\cmd\download-crates
 go build -o .\bin\generate-sidecars.exe .\cmd\generate-sidecars
 ```
 
 ### Dry-run preflight (validate config, estimate work)
-```
+```powershell
 .\bin\download-crates.exe `
   -index-dir "$root\crates.io-index" `
   -out "$root\mirror" `
@@ -41,7 +41,7 @@ go build -o .\bin\generate-sidecars.exe .\cmd\generate-sidecars
 ```
 
 ### Download mirror (with metrics on :9090)
-```
+```powershell
 .\bin\download-crates.exe `
   -index-dir "$root\crates.io-index" `
   -out "$root\mirror" `
@@ -56,7 +56,7 @@ Metrics: http://localhost:9090/metrics
 Status API: http://localhost:9090/api/status
 
 ### Generate sidecars
-```
+```powershell
 .\bin\generate-sidecars.exe `
   -index-dir "$root\crates.io-index" `
   -out "$root\mirror" `

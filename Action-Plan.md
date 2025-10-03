@@ -1,4 +1,4 @@
-# Mirror-Rust-Crates – Action Plan
+# Mirror-Rust-Crates â€” Action Plan
 
 Last updated: 2025-09-30
 
@@ -8,10 +8,10 @@ Last updated: 2025-09-30
 - Next milestones focus on packaging shared libraries, full test coverage via `go test ./...`, and UI polish for GitHub appeal.
 
 ## Current Architecture Snapshot
-1. **Clone-Index.py** – Clones/updates `crates.io-index`, provisions default directories under the user profile, and invokes the Go downloader.
-2. **Download-Crates** – High-throughput HTTP/2 downloader with manifest logging, resumable checksum verification, optional bundling, and metrics.
-3. **Generate-Sidecars** – Emits per-version JSON sidecars with concurrency-safe limit enforcement.
-4. **Archive-Hasher** – Produces YAML inventories, multi-algorithm hashes, OpenPGP signatures, and TAR packages containing legacy TOML metadata.
+1. **Clone-Index.py** â€” Clones/updates `crates.io-index`, provisions default directories under the user profile, and invokes the Go downloader.
+2. **Download-Crates** â€” High-throughput HTTP/2 downloader with manifest logging, resumable checksum verification, optional bundling, and metrics.
+3. **Generate-Sidecars** â€” Emits per-version JSON sidecars with concurrency-safe limit enforcement.
+4. **Archive-Hasher** â€” Produces YAML inventories, multi-algorithm hashes, OpenPGP signatures, and TAR packages containing legacy TOML metadata.
 
 ## Recent Improvements
 - Removed committed binaries and refreshed `.gitignore` to keep `go.sum` while excluding build artefacts.

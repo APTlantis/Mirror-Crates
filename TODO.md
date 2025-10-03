@@ -1,4 +1,4 @@
-# Project TODO – derived from Action-Plan.md
+# Project TODO â€” derived from Action-Plan.md
 
 Generated: 2025-09-30
 Source: Action-Plan.md (Last updated: 2025-09-30)

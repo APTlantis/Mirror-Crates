@@ -1,4 +1,4 @@
-# Mirror-Crates – Progress Log
+# Mirror-Crates â€” Progress Log
 
 This log records updates made against TODO.md and related planning documents.
 

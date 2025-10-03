@@ -4,7 +4,7 @@ This guide covers producing a portable crates mirror and verifying it offline.
 
 ### 1) Produce a manifest while downloading
 Run the downloader to emit `manifest.jsonl`:
-```
+```sh
 download-crates \
   -index-dir /data/crates.io-index \
   -out /data/crates-mirror \
@@ -17,7 +17,7 @@ The downloader writes `manifest.jsonl` at the repo root (or in `-out` if configu
 
 ### 2) Package for transport (optional)
 To reduce inode count and copy times, bundle into rolling archives:
-```
+```sh
 download-crates \
   -index-dir /data/crates.io-index \
   -out /data/crates-mirror \
@@ -26,7 +26,7 @@ download-crates \
 ```
 
 ### 3) Generate sidecars
-```
+```sh
 generate-sidecars \
   -index-dir /data/crates.io-index \
   -out /data/crates-mirror \
@@ -34,7 +34,7 @@ generate-sidecars \
 ```
 
 ### 4) Hash and inventory
-```
+```sh
 go run ./Archive-Hasher/Archive-Hasher.go \
   -dir /data/crates-mirror \
   -out-dir /data/crates-artifacts \
